@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data odierna</title>
     <style>
-        h2 {
+        body {
             text-align: center;
+        }
+        h1, h2 {
+            margin:5px;
         }
     </style>
 </head>
@@ -26,15 +29,15 @@ function getDataItaliana() {
     $giorno_settimana = $giorni_settimana[$oggi['wday']];
     $giorno = $oggi['mday'];
     $mese = $mesi_anno[$oggi['mon'] - 1];
-    $anno = $oggi['year'];
+    $anno = "<h1>" . $oggi['year'] . "</h1>";
 
-    return "$giorno_settimana, $giorno $mese $anno";
+    return "$giorno_settimana, $giorno $mese <br> $anno";
 }
 
 $data_italiana = getDataItaliana();
 ?>
 
-<h2>Data odierna: <?php echo $data_italiana; ?></h2>
+<h2>Data odierna:<br> <?php echo $data_italiana; ?></h2>
 
 </body>
 </html>
